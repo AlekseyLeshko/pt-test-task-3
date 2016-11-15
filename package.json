@@ -1,0 +1,20 @@
+{
+  "name": "pt-test-task-3",
+  "version": "0.0.0",
+  "description": "Test task #3 for Positive Technologies =",
+  "main": "",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlekseyLeshko/pt-test-task-3.git"
+  },
+  "keywords": [],
+  "author": "Aleksey Leshko <alekseyleshko@gmail.com> (https://github.com/AlekseyLeshko)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlekseyLeshko/pt-test-task-3/issues"
+  },
+  "homepage": "https://github.com/AlekseyLeshko/pt-test-task-3#readme"
+}
