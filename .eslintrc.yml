@@ -4,6 +4,8 @@ env:
 extends: 'eslint:recommended'
 parserOptions:
   sourceType: module
+globals:
+  angular: true
 rules:
   indent:
     - 2
