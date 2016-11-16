@@ -1,0 +1,17 @@
+doctype html
+html.no-js lang="en" ng-app="app" ng-controller="AppController as appCtrl" ng-strict-di=""
+  head
+    meta charset="utf-8"
+    meta content="IE=edge" http-equiv="X-UA-Compatible"
+    title ng-bind="appCtrl.name"
+    meta content="" name="description"
+    meta content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width" name="viewport"
+
+  body
+    .app
+      .app-body
+        ui-view.app-content
+
+    | <!-- build:js -->
+      <!-- js libs -->
+    | <!-- endbuild -->

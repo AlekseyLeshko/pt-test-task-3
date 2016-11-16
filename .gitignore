@@ -49,3 +49,7 @@ jspm_packages
 
 ### Vagrant ###
 .vagrant/
+
+
+# app
+www

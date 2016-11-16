@@ -1,0 +1,55 @@
+{
+  "basePath": "",
+  "browsers": [
+    "Chrome",
+    "PhantomJS",
+    "Firefox",
+    "FirefoxAurora",
+    "FirefoxNightly"
+  ],
+  "frameworks": ["jasmine"],
+  "files": [
+    "node_modules/angular/angular.min.js",
+    "node_modules/mobile-angular-ui/dist/js/mobile-angular-ui.min.js",
+    "node_modules/angular-translate/dist/angular-translate.min.js",
+    "node_modules/angular-ui-router/release/angular-ui-router.min.js",
+    "node_modules/angular-mocks/angular-mocks.js",
+    "node_modules/jquery/dist/jquery.min.js", {
+      "pattern": "node_modules/jasmine-jquery/lib/jasmine-jquery.js",
+      "watched": false,
+      "served": true,
+      "included": true
+    }, {
+      "pattern": "test/fixtures/json/**/*.json",
+      "watched": true,
+      "served": true,
+      "included": false
+    }, {
+      "pattern": "test/fixtures/views/**/*.html",
+      "watched": true,
+      "served": true,
+      "included": false
+    },
+    "app/modules/app.module.js",
+    "app/**/*.js",
+    "test/helpers/**/*.js",
+    "test/unit/**/*.js"
+  ],
+  "autoWatch": true,
+  "usePolling": true,
+  "plugins": [
+    "karma-chrome-launcher",
+    "karma-phantomjs-launcher",
+    "karma-firefox-launcher",
+    "karma-jasmine",
+    "karma-coverage"
+  ],
+  "reporters": ["progress", "coverage"],
+  "preprocessors": {
+    "app/**/*.js": ["coverage"]
+  },
+  "coverageReporter": {
+    "type": "html",
+    "dir": "coverage/"
+  }
+}
