@@ -26,7 +26,6 @@
       var routes = i18nRoutes;
       routes = routes.concat(bookRoutes);
       routes = routes.concat(bookTopNewRoutes);
-      console.log(routes);
       for (var i = 0; i < routes.length; i++) {
         var state = routes[i];
         $stateProvider.state(state);
