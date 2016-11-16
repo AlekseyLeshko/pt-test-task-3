@@ -37,7 +37,10 @@
     function createI18n() {
       $translateProvider.translations('en', {
         'TOP': 'Top',
-        'SEARCH': 'Search'
+        'SEARCH': 'Search',
+        'BEST_BOOKS_AND_AUTHORS': 'Best Book\'s & Author\'s',
+        'BOOKS_RATING': 'Book\'s rating',
+        'AUTHOR_RATING': 'Author\'s rating'
       });
 
       $translateProvider.translations('de', {

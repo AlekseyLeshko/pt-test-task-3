@@ -1,16 +1,17 @@
-| Top new
-br
+.jumbotron
+  h1.text-center translate=""
+    | {{ 'BEST_BOOKS_AND_AUTHORS' }}
 
-br
-| Book's rating
-br
-div ng-repeat="book in bookTopNewCtrl.tenNewBooks"
-  a ui-sref="lang.book.show({ id: book.id })"
-    | - {{ book.name }}
-
-br
-| Author's rating
-br
-div ng-repeat="book in bookTopNewCtrl.tenNewBooks"
-  a ui-sref="lang.book.show({ id: book.id })"
-    | - {{ book.author }}
+.raw
+  .col-md-6
+    h2.col-md-12.text-center translate=""
+      | {{ 'BOOKS_RATING' }}
+    h4.col-md-12.text-center ng-repeat="book in bookTopNewCtrl.tenNewBooks"
+      a ui-sref="lang.book.show({ id: book.id })"
+        | {{ book.name }}
+  .col-md-6
+    h2.col-md-12.text-center translate=""
+      | {{ 'AUTHOR_RATING' }}
+    h4.col-md-12.text-center ng-repeat="book in bookTopNewCtrl.tenNewBooks"
+      a ui-sref="lang.book.show({ id: book.id })"
+        | {{ book.author }}

@@ -30,9 +30,10 @@ html.no-js lang="en" ng-app="app" ng-controller="AppController as appCtrl" ng-st
             li ui-sref-active="active"
               a ui-sref="lang.book.search" translate=""
                 | {{ 'SEARCH' }}
-    .app
-      .app-body
-        ui-view.app-content
+    .container
+      .app
+        .app-body
+          ui-view.app-content
 
     script src="./js/lib/angular.min.js"
     script src="./js/lib/angular-ui-router.min.js"
