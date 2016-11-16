@@ -1,5 +1,13 @@
 | book-show
 br
-| {{ bookShowlCtrl.text }}
+| {{ bookShowlCtrl.book.id }}
 br
-| {{ bookShowlCtrl.id }}
+| {{ bookShowlCtrl.book.name }}
+br
+| {{ bookShowlCtrl.book.description }}
+br
+| {{ bookShowlCtrl.book.rating }}
+br
+img src="{{ bookShowlCtrl.book.avatar }}"
+br
+| {{ bookShowlCtrl.book.author }}
