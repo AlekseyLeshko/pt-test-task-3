@@ -1,6 +1,6 @@
 'use strict';
 
-describe('lang controller', function() {
+describe('app controller', function() {
   beforeEach(module('app'));
 
   var ctrl;

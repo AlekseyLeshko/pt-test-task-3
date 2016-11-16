@@ -1,6 +1,6 @@
 'use strict';
 
-describe('appConfig constant', function() {
+describe('i18n routes constant', function() {
   beforeEach(module('app'));
 
   var i18nRoutes;

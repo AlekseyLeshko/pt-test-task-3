@@ -1,6 +1,6 @@
 'use strict';
 
-describe('book storage constant', function() {
+describe('app config constant', function() {
   beforeEach(module('app'));
 
   var appConfig;

@@ -6,12 +6,12 @@
     .controller('BookTopNewController', BookTopNewController);
 
   BookTopNewController.$inject = [
-    'BooksFactory'
+    'booksFactory'
   ];
 
-  function BookTopNewController(BooksFactory) {
+  function BookTopNewController(booksFactory) {
     var vm = this;
-    vm.tenNewBooks = BooksFactory.getByRating().slice(0, 10);
+    vm.tenNewBooks = booksFactory.getByRating().slice(0, 10);
   }
 })();
 
