@@ -27,6 +27,7 @@
     "angular-ui-bootstrap": "^2.2.0",
     "angular-ui-router": "~0.3.2",
     "bootstrap": "^3.3.7",
+    "codeclimate-test-reporter": "^0.4.0",
     "gulp": "^3.8.9",
     "gulp-angular-filesort": "^1.0.4",
     "gulp-concat": "^2.4.1",
