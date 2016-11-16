@@ -29,8 +29,13 @@ module.exports = function(config) {
       'test/unit/**/*.spec.js'
     ],
     exclude: [],
-    preprocessors: {},
-    reporters: ['progress'],
+    preprocessors: {
+      'app/**/*.js': ['coverage']
+    },
+    reporters: [
+      'progress',
+      'coverage'
+    ],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
@@ -40,7 +45,11 @@ module.exports = function(config) {
       'PhantomJS'
     ],
     singleRun: false,
-    concurrency: Infinity
+    concurrency: Infinity,
+    coverageReporter: {
+      type: 'html',
+      dir: 'coverage/'
+    }
   });
 };
 
