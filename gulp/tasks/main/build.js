@@ -3,8 +3,11 @@ var runSequence = require('run-sequence');
 
 gulp.task('build', function(callback) {
   var taskList = [
-    'slim', 'scripts'
+    'slim',
+    'scripts',
+    'libs'
   ];
 
   return runSequence('clean', taskList, callback);
 });
+

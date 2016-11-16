@@ -15,7 +15,7 @@ gulp.task('slim', function() {
 
   return gulp.src('app/**/*.slim')
     .pipe(slim(slimConfig))
-    .pipe(htmlmin(minifyConfig))
+    // .pipe(htmlmin(minifyConfig))
     .pipe(rename(function (path) {
       path.dirname = '';
       if (path.basename !== 'index') {
