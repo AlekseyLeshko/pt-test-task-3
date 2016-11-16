@@ -4,6 +4,7 @@
   angular
     .module('app', [
       'pascalprecht.translate',
-      'ui.router'
+      'ui.router',
+      'ui.bootstrap'
     ]);
 })();

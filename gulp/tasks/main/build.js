@@ -5,7 +5,8 @@ gulp.task('build', function(callback) {
   var taskList = [
     'slim',
     'scripts',
-    'libs'
+    'libs',
+    'css'
   ];
 
   return runSequence('clean', taskList, callback);

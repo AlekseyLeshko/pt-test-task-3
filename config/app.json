@@ -8,7 +8,14 @@
   "scripts": [
     "node_modules/angular/angular.min.js",
     "node_modules/angular-translate/dist/angular-translate.min.js",
-    "node_modules/angular-ui-router/release/angular-ui-router.min.js"
+    "node_modules/angular-ui-router/release/angular-ui-router.min.js",
+    "node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js",
+    "node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"
   ],
-  "appCss": "style.min.css"
+  "appCss": "style.min.css",
+  "css": [
+    "node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css",
+    "node_modules/bootstrap/dist/css/bootstrap.min.css"
+  ]
 }
+
