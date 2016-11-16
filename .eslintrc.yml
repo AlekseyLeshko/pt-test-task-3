@@ -6,6 +6,12 @@ parserOptions:
   sourceType: module
 globals:
   angular: true
+  describe: true
+  beforeEach: true
+  inject: true
+  spyOn: true
+  it: true
+  expect: true
 rules:
   indent:
     - 2
