@@ -7,13 +7,13 @@
 
   BookShowController.$inject = [
     '$stateParams',
-    'BooksFactory'
+    'booksFactory'
   ];
 
-  function BookShowController($stateParams, BooksFactory) {
+  function BookShowController($stateParams, booksFactory) {
     var vm = this;
     vm.id = $stateParams.id;
-    vm.book = BooksFactory.get(vm.id);
+    vm.book = booksFactory.get(vm.id);
   }
 })();
 

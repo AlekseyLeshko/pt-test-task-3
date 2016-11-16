@@ -1,6 +1,6 @@
 'use strict';
 
-describe('i18n service', function() {
+describe('i18n factory', function() {
   beforeEach(module('app'));
 
   var i18n;

@@ -3,13 +3,13 @@
 
   angular
     .module('app')
-    .factory('BooksFactory', BooksFactory);
+    .factory('booksFactory', booksFactory);
 
-  BooksFactory.$inject = [
+  booksFactory.$inject = [
     'bookStorage'
   ];
 
-  function BooksFactory(bookStorage) {
+  function booksFactory(bookStorage) {
     var factory = {
       all: bookStorage,
       get: get,

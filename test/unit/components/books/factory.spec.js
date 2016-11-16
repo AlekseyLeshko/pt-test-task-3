@@ -1,13 +1,13 @@
 'use strict';
 
-describe('book factory', function() {
+describe('books factory', function() {
   beforeEach(module('app'));
 
   var booksFactory;
 
   beforeEach(function() {
     inject(function($injector) {
-      booksFactory = $injector.get('BooksFactory');
+      booksFactory = $injector.get('booksFactory');
     });
   });
 

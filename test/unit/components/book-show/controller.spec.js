@@ -1,6 +1,6 @@
 'use strict';
 
-describe('lang controller', function() {
+describe('book show controller', function() {
   beforeEach(module('app'));
 
   var ctrl;
@@ -14,7 +14,7 @@ describe('lang controller', function() {
     };
 
     inject(function($controller, $injector) {
-      booksFactory = $injector.get('BooksFactory');
+      booksFactory = $injector.get('booksFactory');
       var injectObj = {
         $stateParams: $stateParams,
         booksFactory: booksFactory
