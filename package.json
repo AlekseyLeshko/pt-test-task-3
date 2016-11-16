@@ -4,7 +4,7 @@
   "description": "Test task #3 for Positive Technologies =",
   "main": "",
   "scripts": {
-    "test": "",
+    "test": "gulp build && karma start karma.conf.js --browsers PhantomJS --singleRun",
     "build": "gulp",
     "karma": "karma start karma.conf.js"
   },
