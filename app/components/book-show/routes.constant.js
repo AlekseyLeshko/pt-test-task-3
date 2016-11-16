@@ -3,11 +3,11 @@
 
   angular
     .module('app')
-    .constant('bookRoutes', bookRoutes());
+    .constant('bookShowRoutes', bookShowRoutes());
 
-  bookRoutes.$inject = [];
+  bookShowRoutes.$inject = [];
 
-  function bookRoutes() {
+  function bookShowRoutes() {
     var bookStateList = [{
       name: 'lang.book',
       abstract: true,
