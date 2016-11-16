@@ -11,6 +11,25 @@ html.no-js lang="en" ng-app="app" ng-controller="AppController as appCtrl" ng-st
     link rel="stylesheet" href="./css/ui-bootstrap-csp.css"
 
   body
+    nav.navbar.navbar-default.navbar-fixed-top
+      .container-fluid
+        .navbar-header
+          button.navbar-toggle.collapsed aria-expanded="false" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button"
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          a.navbar-brand href="#"
+            | {{ appCtrl.name }}
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li ui-sref-active="active"
+              a ui-sref="lang.book.topNew" translate=""
+                | {{ 'TOP' }}
+                span.sr-only (current)
+            li ui-sref-active="active"
+              a ui-sref="lang.book.search" translate=""
+                | {{ 'SEARCH' }}
     .app
       .app-body
         ui-view.app-content

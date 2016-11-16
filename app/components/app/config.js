@@ -36,18 +36,14 @@
 
     function createI18n() {
       $translateProvider.translations('en', {
-        'TITLE': 'Hello',
-        'FOO': 'This is a paragraph'
+        'TOP': 'Top',
+        'SEARCH': 'Search'
       });
 
       $translateProvider.translations('de', {
-        'TITLE': 'Hallo',
-        'FOO': 'Dies ist ein Paragraph'
       });
 
       $translateProvider.translations('ru', {
-        'TITLE': 'Привет',
-        'FOO': 'Это параграф'
       });
 
       $translateProvider.preferredLanguage('en');
