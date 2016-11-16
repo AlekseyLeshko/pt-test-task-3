@@ -6,7 +6,7 @@ describe('book storage constant', function() {
   var bookStorage;
 
   beforeEach(inject(function($injector) {
-    bookStorage = $injector.get('bookStoeage');
+    bookStorage = $injector.get('bookStorage');
   }));
 
   it('shoule be 100 items', function() {
