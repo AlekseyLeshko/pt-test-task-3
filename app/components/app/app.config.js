@@ -10,12 +10,12 @@
     '$urlRouterProvider',
     '$translateProvider',
     'i18nRoutes',
-    'bookRoutes',
+    'bookShowRoutes',
     'bookTopNewRoutes',
     'appConfig'
   ];
 
-  function config($stateProvider, $urlRouterProvider, $translateProvider, i18nRoutes, bookRoutes, bookTopNewRoutes, appConfig) {
+  function config($stateProvider, $urlRouterProvider, $translateProvider, i18nRoutes, bookShowRoutes, bookTopNewRoutes, appConfig) {
     createRouting();
     createI18n();
 
@@ -24,7 +24,7 @@
       $urlRouterProvider.otherwise('/' + location + '/book/top/new');
 
       var routes = i18nRoutes;
-      routes = routes.concat(bookRoutes);
+      routes = routes.concat(bookShowRoutes);
       routes = routes.concat(bookTopNewRoutes);
       for (var i = 0; i < routes.length; i++) {
         var state = routes[i];
