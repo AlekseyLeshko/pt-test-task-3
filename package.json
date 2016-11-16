@@ -6,6 +6,7 @@
   "scripts": {
     "test": "gulp build && karma start karma.conf.js --browsers PhantomJS --singleRun",
     "build": "gulp",
+    "tdd": "karma start karma.conf.js --browsers PhantomJS",
     "karma": "karma start karma.conf.js"
   },
   "repository": {
