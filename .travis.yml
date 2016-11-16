@@ -4,7 +4,7 @@ node_js:
 
 addons:
   code_climate:
-    repo_token: 71b3536262dc24c8587720174c6aa956544e23f121018e2938f302d56802b38f
+    repo_token: ee3c28819630e51d27fc2770af68b1e4c109703a6744fce0b91161955eafb975
 
 before_script:
   - gem install slim
