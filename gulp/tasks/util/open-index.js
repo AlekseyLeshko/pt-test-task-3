@@ -4,10 +4,9 @@ var appConfig = require('../../../config/app.json');
 
 gulp.task('open-index', function(){
   var gopenConfig = {
-    url: 'http://' + appConfig.dev.ip + ':' + appConfig.dev.port,
-    app: appConfig.dev.browser
+    uri: 'http://' + appConfig.dev.ip + ':' + appConfig.dev.port
   };
 
   return gulp.src('www/index.html')
-    .pipe(gopen('', gopenConfig));
+    .pipe(gopen(gopenConfig));
 });
