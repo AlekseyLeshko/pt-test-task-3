@@ -12,6 +12,7 @@ globals:
   spyOn: true
   it: true
   expect: true
+  window: true
 rules:
   indent:
     - 2
