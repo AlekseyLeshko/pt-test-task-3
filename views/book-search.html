@@ -1,0 +1,49 @@
+<input class="form-control" ng-model="filterText" placeholder="Filter..." type="text">
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>
+        #
+      </th>
+      <th>
+        <a ng-click="bookSearchCtrl.sortBy(&#39;name&#39;)" translate="">{{ 'NAME' }}</a><span class="sortorder" ng-class="{reverse: bookSearchCtrl.reverse}" ng-show="bookSearchCtrl.propertyName === &#39;name&#39;"></span>
+      </th>
+      <th>
+        <a ng-click="bookSearchCtrl.sortBy(&#39;author&#39;)" translate="">{{ 'AUTHOR' }}</a><span class="sortorder" ng-class="{reverse: bookSearchCtrl.reverse}" ng-show="bookSearchCtrl.propertyName === &#39;author&#39;"></span>
+      </th>
+      <th>
+        <a ng-click="bookSearchCtrl.sortBy(&#39;rating&#39;)" translate="">{{ 'RATING' }}</a><span class="sortorder" ng-class="{reverse: bookSearchCtrl.reverse}" ng-show="bookSearchCtrl.propertyName === &#39;rating&#39;"></span>
+      </th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody ng-repeat="item in bookSearchCtrl.filterData = (bookSearchCtrl.books| filter:filterText) | limitTo:bookSearchCtrl.count: bookSearchCtrl.count * (bookSearchCtrl.page - 1)">
+    <tr>
+      <th>
+        {{ item.id }}
+      </th>
+      <td>
+        <a ui-sref="lang.book.show({ id: item.id })">{{ item.name }}</a>
+      </td>
+      <td>
+        {{ item.author }}
+      </td>
+      <td>
+        {{ item.rating }}
+      </td>
+      <td>
+        <button class="btn btn-default" ng-click="bookSearchCtrl.setActiveItem(item)" translate="">{{ 'INFO' }}</button>
+      </td>
+    </tr>
+    <tr ng-show="item.isActive">
+      <td>
+        <img src="{{ item.avatar }}">
+      </td>
+      <td>
+        <p></p>
+        <span translate="">{{ 'DESCRIPTION' }}:</span>&nbsp; {{ item.description }}
+      </td>
+    </tr>
+  </tbody>
+</table>
+<ul class="pagination-sm" items-per-page="bookSearchCtrl.count" ng-change="bookSearchCtrl.pageChanged()" ng-model="bookSearchCtrl.page" total-items="bookSearchCtrl.filterData.length" uib-pagination=""></ul>

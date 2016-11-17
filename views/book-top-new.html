@@ -1,0 +1,23 @@
+<div class="jumbotron">
+  <h1 class="text-center" translate="">
+    {{ 'BEST_BOOKS_AND_AUTHORS' }}
+  </h1>
+</div>
+<div class="raw">
+  <div class="col-md-6">
+    <h2 class="col-md-12 text-center" translate="">
+      {{ 'BOOKS_RATING' }}
+    </h2>
+    <h4 class="col-md-12 text-center" ng-repeat="book in bookTopNewCtrl.tenNewBooks">
+      <a ui-sref="lang.book.show({ id: book.id })">{{ book.name }}</a>
+    </h4>
+  </div>
+  <div class="col-md-6">
+    <h2 class="col-md-12 text-center" translate="">
+      {{ 'AUTHOR_RATING' }}
+    </h2>
+    <h4 class="col-md-12 text-center" ng-repeat="book in bookTopNewCtrl.tenNewBooks">
+      <a ui-sref="lang.book.show({ id: book.id })">{{ book.author }}</a>
+    </h4>
+  </div>
+</div>

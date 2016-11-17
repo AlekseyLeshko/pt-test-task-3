@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" ng-app="app" ng-controller="AppController as appCtrl" ng-strict-di="">
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <title ng-bind="appCtrl.name"></title>
+    <meta content="" name="description">
+    <meta content="initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width" name="viewport">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/ui-bootstrap-csp.css" rel="stylesheet">
+    <link href="./css/style.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button aria-expanded="false" class="navbar-toggle collapsed" data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" type="button"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="#">{{ appCtrl.name }}</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <li ui-sref-active="active">
+              <a translate="" ui-sref="lang.book.topNew">{{ 'TOP' }}<span class="sr-only" current=""></span></a>
+            </li>
+            <li ui-sref-active="active">
+              <a translate="" ui-sref="lang.book.search">{{ 'SEARCH' }}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="app">
+        <div class="app-body">
+          <ui-view class="app-content"></ui-view>
+        </div>
+      </div>
+    </div>
+    <script src="./js/lib/angular.min.js"></script>
+    <script src="./js/lib/angular-ui-router.min.js"></script>
+    <script src="./js/lib/angular-translate.min.js"></script>
+    <script src="./js/lib/ui-bootstrap.js"></script>
+    <script src="./js/lib/ui-bootstrap-tpls.js"></script>
+    <script src="./js/app-script.min.js"></script>
+  </body>
+</html>
