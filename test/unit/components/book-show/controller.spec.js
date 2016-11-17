@@ -5,7 +5,14 @@ describe('book show controller', function() {
 
   var ctrl;
   var id = 'd2b7bbf0-a5fd-408b-a0be-9b425f793eea';
-  var booksFactory;
+  var item = {
+    id: id
+  };
+  var booksFactory = {
+    get: function() {
+      return item;
+    }
+  };
 
   beforeEach(function() {
     var ctrlName = 'BookShowController';
@@ -13,8 +20,7 @@ describe('book show controller', function() {
       id: id
     };
 
-    inject(function($controller, $injector) {
-      booksFactory = $injector.get('booksFactory');
+    inject(function($controller) {
       var injectObj = {
         $stateParams: $stateParams,
         booksFactory: booksFactory

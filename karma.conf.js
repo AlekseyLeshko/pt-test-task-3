@@ -28,7 +28,8 @@ module.exports = function(config) {
       // },
       'app/modules/app.module.js',
       'app/**/*.js',
-      'test/unit/**/*.spec.js'
+      'test/unit/**/*.spec.js',
+      'app/books/**/*.json'
     ],
     exclude: [],
     preprocessors: {

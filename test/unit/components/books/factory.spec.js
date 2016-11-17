@@ -3,20 +3,33 @@
 describe('books factory', function() {
   beforeEach(module('app'));
 
+  var $httpBackend;
   var booksFactory;
+  var id = 'test-id-0';
+  var data = [{
+    id: id,
+    rating: 3
+  }, {
+    id: 'test-id-1',
+    rating: 7
+  }];
 
   beforeEach(function() {
-    inject(function($injector) {
+    inject(function($injector, _$httpBackend_) {
       booksFactory = $injector.get('booksFactory');
+      $httpBackend = _$httpBackend_;
+      $httpBackend.expectGET('books/array.json').respond(data);
+      $httpBackend.expectGET('/views/book-top-new.html').respond({});
     });
+    $httpBackend.flush();
   });
 
-  it('should be 100 items', function() {
-    expect(booksFactory.all.length).toEqual(100);
+  it('should be items', function() {
+    expect(booksFactory.all).not.toBeUndefined();
+    expect(booksFactory.all.length).toEqual(data.length);
   });
 
   it('should get item by id', function() {
-    var id = 'd2b7bbf0-a5fd-408b-a0be-9b425f793eea';
     var item = booksFactory.get(id);
 
     expect(item).not.toBeUndefined();
@@ -25,8 +38,8 @@ describe('books factory', function() {
   it('should get item array by rating', function() {
     var items = booksFactory.getByRating();
 
-    expect(items[0].rating).toEqual(10);
-    expect(items[items.length - 1].rating).toEqual(1);
+    expect(items[0].rating).toEqual(7);
+    expect(items[items.length - 1].rating).toEqual(3);
   });
 });
 

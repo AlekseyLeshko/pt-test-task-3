@@ -6,15 +6,24 @@
     .factory('booksFactory', booksFactory);
 
   booksFactory.$inject = [
-    'bookStorage'
+    '$http'
   ];
 
-  function booksFactory(bookStorage) {
+  function booksFactory($http) {
     var factory = {
-      all: bookStorage,
+      getAll: getAll(),
       get: get,
       getByRating: getByRating
     };
+
+    function getAll() {
+      return $http
+        .get('books/array.json')
+        .success(function(data) {
+          factory.all = data;
+          return data;
+        });
+    }
 
     return factory;
 

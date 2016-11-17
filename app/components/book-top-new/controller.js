@@ -11,7 +11,9 @@
 
   function BookTopNewController(booksFactory) {
     var vm = this;
-    vm.tenNewBooks = booksFactory.getByRating().slice(0, 10);
+    booksFactory.getAll.then(function() {
+      vm.tenNewBooks = booksFactory.getByRating().slice(0, 10);
+    });
   }
 })();
 

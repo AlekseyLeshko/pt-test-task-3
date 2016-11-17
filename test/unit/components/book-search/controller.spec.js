@@ -5,13 +5,19 @@ describe('book search controller', function() {
   beforeEach(module('app'));
 
   var ctrl;
-  var booksFactory;
+  var booksFactory = {
+    books: [{
+    }, {
+    }],
+    all: [{
+    }, {
+    }]
+  };
 
   beforeEach(function() {
     var ctrlName = 'BookSearchController';
 
-    inject(function($controller, $injector) {
-      booksFactory = $injector.get('booksFactory');
+    inject(function($controller) {
       var injectObj = {
         orderBy: orderBy,
         booksFactory: booksFactory
@@ -23,14 +29,15 @@ describe('book search controller', function() {
   it('should be books and config', function() {
     expect(ctrl.propertyName).toEqual('name');
     expect(ctrl.reverse).toBeFalsy();
-    expect(ctrl.books.length).toEqual(100);
+    expect(ctrl.books.length).toEqual(2);
     expect(ctrl.activeItem).toBeUndefined();
     expect(ctrl.page).toEqual(1);
     expect(ctrl.count).toEqual(10);
-    expect(ctrl.displayItems.length).toEqual(10);
+    expect(ctrl.displayItems.length).toEqual(2);
   });
 
   it('should change page', function() {
+    ctrl.books.length = 100;
     spyOn(ctrl.books, 'slice').and.callThrough();
     ctrl.page = 5;
 
@@ -71,15 +78,20 @@ describe('book search controller', function() {
   });
 
   it('should be sort by rating', function() {
+    ctrl.books = [{
+      rating: 3
+    }, {
+      rating: 7
+    }];
     var propertyName = 'rating';
 
     ctrl.sortBy(propertyName);
 
     expect(ctrl.propertyName).toEqual(propertyName);
-    expect(ctrl.books[0].rating).toEqual(1);
-    expect(ctrl.books[99].rating).toEqual(10);
+    expect(ctrl.books[0].rating).toEqual(3);
+    expect(ctrl.books[1].rating).toEqual(7);
 
-    expect(ctrl.books.length).toEqual(100);
+    expect(ctrl.books.length).toEqual(2);
     expect(ctrl.reverse).toBeFalsy();
   });
 
@@ -90,7 +102,7 @@ describe('book search controller', function() {
     ctrl.sortBy(propertyName);
 
     expect(ctrl.reverse).toBeTruthy();
-    expect(ctrl.books.length).toEqual(100);
+    expect(ctrl.books.length).toEqual(2);
   });
 });
 
