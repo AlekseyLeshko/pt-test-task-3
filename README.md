@@ -20,3 +20,11 @@ Test task #3 for Positive Technologies
 - любое представление моков данных (plain object или примитивный API express.js)
 - корректная работа в IE 10+, Chrome 49+, FF 45+
 - Код приложения выложить на любой доступный сервис – github, bitbucket
+
+
+#### Dependency
+Slim need ruby gem
+```
+gem install slim
+```
+
