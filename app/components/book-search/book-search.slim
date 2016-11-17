@@ -1,23 +1,45 @@
-| Search
-br
-input.form-control ng-model="filterText" placeholder="Filter..." type="text" /
+input.form-control ng-model="filterText" placeholder="Filter..." type="text"
 
-button ng-click="bookSearchCtrl.sortBy(null)"
-  | Set to unsorted
+table.table.table-bordered
+  thead
+    tr
+      th #
+      th
+        a ng-click="bookSearchCtrl.sortBy('name')" translate=""
+          | {{ 'NAME' }}
+        span.sortorder ng-class=("{reverse: bookSearchCtrl.reverse}") ng-show=("bookSearchCtrl.propertyName === 'name'")
 
-button ng-click="bookSearchCtrl.sortBy('name')"
-  | name
-ul
-  li ng-repeat=("item in bookSearchCtrl.filterData = (bookSearchCtrl.books| filter:filterText) | limitTo:bookSearchCtrl.count: bookSearchCtrl.count * (bookSearchCtrl.page - 1)")
-    div ng-click="bookSearchCtrl.setActiveItem(item)"
-      div
+      th
+        a ng-click="bookSearchCtrl.sortBy('author')" translate=""
+          | {{ 'AUTHOR' }}
+        span.sortorder ng-class=("{reverse: bookSearchCtrl.reverse}") ng-show=("bookSearchCtrl.propertyName === 'author'")
+      th
+        a ng-click="bookSearchCtrl.sortBy('rating')" translate=""
+          | {{ 'RATING' }}
+        span.sortorder ng-class=("{reverse: bookSearchCtrl.reverse}") ng-show=("bookSearchCtrl.propertyName === 'rating'")
+      th
+  tbody ng-repeat=("item in bookSearchCtrl.filterData = (bookSearchCtrl.books| filter:filterText) | limitTo:bookSearchCtrl.count: bookSearchCtrl.count * (bookSearchCtrl.page - 1)")
+    tr
+      th
+        | {{ item.id }}
+      td
         a ui-sref="lang.book.show({ id: item.id })"
           | {{ item.name }}
-      div
-      | {{ item.author }}
-      div ng-show="item.isActive"
-        | {{ item.description }}
+      td
+        | {{ item.author }}
+      td
         | {{ item.rating }}
+      td
+        button.btn.btn-default ng-click="bookSearchCtrl.setActiveItem(item)" translate=""
+          | {{ 'INFO' }}
+    tr ng-show="item.isActive"
+      td
+        img src="{{ item.avatar }}"
+      td
+        p
+        span translate=""
+          | {{ 'DESCRIPTION' }}:
+        | &nbsp; {{ item.description }}
 
-ul.pagination-sm.pagination uib-pagination="" items-per-page="bookSearchCtrl.count" next-text="&rsaquo;" ng-change="bookSearchCtrl.pageChanged()" ng-model="bookSearchCtrl.page" previous-text="&lsaquo;" total-items="bookSearchCtrl.filterData.length"
+ul.pagination-sm uib-pagination="" items-per-page="bookSearchCtrl.count" ng-change="bookSearchCtrl.pageChanged()" ng-model="bookSearchCtrl.page"  total-items="bookSearchCtrl.filterData.length"
 
