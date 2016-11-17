@@ -1,13 +1,26 @@
-| book-show
-br
-| {{ bookShowlCtrl.book.id }}
-br
-| {{ bookShowlCtrl.book.name }}
-br
-| {{ bookShowlCtrl.book.description }}
-br
-| {{ bookShowlCtrl.book.rating }}
-br
-img src="{{ bookShowlCtrl.book.avatar }}"
-br
-| {{ bookShowlCtrl.book.author }}
+.media
+  .media-left
+    img.media-object src="{{ bookShowCtrl.book.avatar }}"
+  .media-body
+    h4.media-heading
+      p
+        span translate=""
+          | {{ 'NAME' }}:
+        | &nbsp; {{ bookShowCtrl.book.name }}
+      dl.dl-horizontal
+        dt
+          | {{ 'ID' }}:
+        dd
+          | {{ bookShowCtrl.book.id}}
+        dt
+          | {{ 'DESCRIPTION' }}:
+        dd
+          | {{ bookShowCtrl.book.description }}
+        dt
+          | {{ 'RATING' }}:
+        dd
+          | {{ bookShowCtrl.book.rating }}
+        dt
+          | {{ 'AUTHOR' }}:
+        dd
+          | {{ bookShowCtrl.book.author }}

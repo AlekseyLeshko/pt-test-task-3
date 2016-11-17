@@ -40,7 +40,12 @@
         'SEARCH': 'Search',
         'BEST_BOOKS_AND_AUTHORS': 'Best Book\'s & Author\'s',
         'BOOKS_RATING': 'Book\'s rating',
-        'AUTHOR_RATING': 'Author\'s rating'
+        'AUTHOR_RATING': 'Author\'s rating',
+        'NAME': 'Name',
+        'ID': 'Id',
+        'DESCRIPTION': 'Description',
+        'RATING': 'Rating',
+        'AUTHOR': 'Author'
       });
 
       $translateProvider.translations('de', {

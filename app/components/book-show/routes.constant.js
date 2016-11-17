@@ -17,7 +17,7 @@
       name: 'lang.book.show',
       url: '/show/:id',
       templateUrl: '/views/book-show.html',
-      controller: 'BookShowController as bookShowlCtrl'
+      controller: 'BookShowController as bookShowCtrl'
     }];
 
     return bookStateList;
