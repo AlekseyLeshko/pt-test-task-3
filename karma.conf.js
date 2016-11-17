@@ -10,26 +10,9 @@ module.exports = function(config) {
       'node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js',
       'node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js',
       'node_modules/angular-mocks/angular-mocks.js',
-      // 'node_modules/jquery/dist/jquery.min.js', {
-      // 'pattern': 'node_modules/jasmine-jquery/lib/jasmine-jquery.js',
-      // 'watched': false,
-      // 'served': true,
-      // 'included': true
-      // }, {
-      // 'pattern': 'test/fixtures/json/**/*.json',
-      // 'watched': true,
-      // 'served': true,
-      // 'included': false
-      // }, {
-      // 'pattern': 'test/fixtures/views/**/*.html',
-      // 'watched': true,
-      // 'served': true,
-      // 'included': false
-      // },
       'app/modules/app.module.js',
       'app/**/*.js',
-      'test/unit/**/*.spec.js',
-      'app/books/**/*.json'
+      'test/unit/**/*.spec.js'
     ],
     exclude: [],
     preprocessors: {
